@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FaceTracker = () => {
+const FaceTracker = ({ imageUrl }) => {
     return (
         <div className='center'>
-            <img alt='' src={"https://samples.clarifai.com/face-det.jpg"} />
+            <img alt='' src={imageUrl} />
 
         </div>
     );
