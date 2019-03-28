@@ -4,6 +4,7 @@ import Clarifai from 'clarifai';
 import FaceTracker from './components/FaceTracker/FaceTracker';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
+import Register from './components/Register/Register';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank'
@@ -80,9 +81,9 @@ class App extends Component {
           params={particlesOption}
         />
         <Navigation onRouteChange={this.onRouteChange} />
-        {this.state.route === 'signin'
-          ? <Signin onRouteChange={this.onRouteChange} />
-          : <div>
+        {this.state.route === 'home'
+          ?
+          <div>
             <Logo />
             <Rank />
             <ImageLinkForm
@@ -91,6 +92,11 @@ class App extends Component {
             />
             <FaceTracker box={this.state.box} imageUrl={this.state.imageUrl} />
           </div>
+          : (
+            this.state.route === 'signin'
+              ? < Signin onRouteChange={this.onRouteChange} />
+              : < Register onRouteChange={this.onRouteChange} />
+          )
         }
       </div>
     );
